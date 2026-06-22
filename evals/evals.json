@@ -1,0 +1,63 @@
+{
+  "skill_name": "sprite-skill",
+  "shared_background": "Jane Doe. +65 0000 0000. jane.doe@example.com. LinkedIn: linkedin.com/in/janedoe-example. GitHub: github.com/janedoe-example. Portfolio: janedoe.example.com.\nEducation: BBA in Marketing, National University of Example, 2020-2024, GPA 3.8/4.0. Coursework: Marketing Analytics, Consumer Behavior, Data Visualization.\nGrowth Marketing Associate, Acme Retail (Singapore), 2024-present: built a campaign-performance dashboard across 5 ad channels that cut weekly reporting from ~10 hours to ~2; rebuilt email lifecycle flows using cohort and A/B-test data, email-driven revenue up 32% in two quarters; coordinated a 6-person cross-functional product launch across creative, legal, and ops, shipped on schedule.\nMarketing Intern, Globex Media (remote), 2023-2024: reworked the content calendar around top-performing formats, organic social engagement went from ~1.5% to ~4.5%; templated the influencer-outreach workflow in a shared tracker, saved the team ~5 hours a week; ran a competitor teardown of 20+ campaigns into a positioning brief used for the Q3 plan.\nBrand Assistant, Initech Agency (Singapore), 2022-2023: owned the production schedule for 12 client campaigns with 100% on-time delivery; introduced a single-source brief template that cut creative revision cycles ~40%; audience research supported 2 winning new-business pitches.\nTools: Google Analytics, Meta Business Suite, HubSpot, Looker Studio, SQL, Python (data analysis), Canva, Figma, Jira, Notion, MS Office.\nLanguages: English (native), Mandarin (professional), Spanish (conversational).\nVolunteer: Student Outreach Lead, University Marketing Club, 2021-2023: built a 150-member community via events and a weekly newsletter; mentored 8 juniors into their first internships.\nHobbies: trail running (2 marathons), film photography, competitive bouldering, jazz piano.",
+  "evals": [
+    {
+      "id": 1,
+      "name": "dm-growth-marketing",
+      "prompt": "I'm applying for a Growth Marketing Manager role at a DTC skincare brand in Singapore. The JD: own lifecycle and email marketing, run performance analysis across paid and owned channels, design and read A/B tests, and partner cross-functionally with creative and ops to ship campaigns; data-driven, SQL/analytics a plus. Please tailor my resume to this role and write a matching cover letter, delivered as a single PDF (cover letter first, then a one-page resume).",
+      "expected_output": "Single PDF: page 1 = tailored cover letter, page 2 = one-page resume. Resume follows structure (summary, competencies, software section, education above experience, 3 bullets/role, volunteer, additional). Bullets lead with verbs and quantify money/time. ATS-clean. <2MB.",
+      "assertions": [
+        {"text": "Output is a single PDF file"},
+        {"text": "Deliverable is exactly 2 pages (cover letter page + 1-page resume page)"},
+        {"text": "PDF file size is under 2 MB"},
+        {"text": "Each professional experience entry has exactly 3 bullet points"},
+        {"text": "Education section appears ABOVE Professional Experience"},
+        {"text": "Software/tools are in their own dedicated section, not buried inside Additional Information"},
+        {"text": "At least 4 experience bullets quantify impact in money or time terms (%, hours, revenue, on-time)"},
+        {"text": "The cover letter on page 1 references the Growth Marketing role and is specific, not generic boilerplate"},
+        {"text": "Text is ATS-clean ASCII: no em dashes, en dashes, or curly quotes"},
+        {"text": "No facts beyond the provided background are invented (companies, numbers, titles all traceable to the brief)"}
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "pm-internal-tools",
+      "prompt": "I want to apply for a Product Manager, Internal Tools position. The JD: own internal automation tools end to end -- define problems from team pain points, write requirements, prototype, set success metrics, and iterate; comfort with SQL/Python and cross-functional work required. Tailor my resume for this and write a cover letter, as one PDF (cover letter then one-page resume).",
+      "expected_output": "Single 2-page PDF tailored to a product/tooling framing (ownership, requirements, metrics, automation). One-page resume, structure rules upheld, money/time bullets, ATS-clean, <2MB.",
+      "assertions": [
+        {"text": "Output is a single PDF file"},
+        {"text": "Deliverable is exactly 2 pages (cover letter page + 1-page resume page)"},
+        {"text": "PDF file size is under 2 MB"},
+        {"text": "Each professional experience entry has exactly 3 bullet points"},
+        {"text": "Education appears above Professional Experience and Software is its own section"},
+        {"text": "Summary and competencies are framed for a product/tooling role (ownership, requirements, metrics, automation), not pure marketing"},
+        {"text": "At least 4 experience bullets quantify impact in money or time terms"},
+        {"text": "The cover letter references the Product Manager / internal-tools role specifically"},
+        {"text": "Text is ATS-clean ASCII with no em/en dashes or curly quotes"},
+        {"text": "No invented facts beyond the provided background"}
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "analyst-resume-only-ats",
+      "prompt": "Can you make me an ATS-friendly, strictly one-page resume tailored to this Marketing Analyst role: build dashboards, analyze campaign performance, automate reporting, present recommendations; strong Excel/SQL, Looker or similar. Resume only -- no cover letter. Output as a PDF.",
+      "expected_output": "Single one-page resume PDF (no cover letter page). Analyst framing. Structure rules upheld, money/time bullets, ATS-clean ASCII, <2MB.",
+      "assertions": [
+        {"text": "Output is a single PDF file"},
+        {"text": "Deliverable is exactly 1 page (resume only, no cover letter page)"},
+        {"text": "PDF file size is under 2 MB"},
+        {"text": "Each professional experience entry has exactly 3 bullet points"},
+        {"text": "Education appears above Professional Experience and Software is its own section"},
+        {"text": "At least 4 experience bullets quantify impact in money or time terms"},
+        {"text": "Resume is framed toward analytics/reporting (dashboards, SQL, reporting automation)"},
+        {"text": "Text is ATS-clean ASCII with no em/en dashes or curly quotes"},
+        {"text": "No cover letter is included"},
+        {"text": "No invented facts beyond the provided background"}
+      ],
+      "files": []
+    }
+  ]
+}

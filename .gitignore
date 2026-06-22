@@ -1,0 +1,15 @@
+# Personal data -- never commit. Copy assets/candidate.example.py -> candidate.py and fill locally.
+candidate.py
+cover_letter_DM.md
+cover_letter_PM.md
+cover_letter_*.md
+!assets/cover_letter_*.example.md
+
+# Build artifacts
+out/
+*.docx
+*.pdf
+_preview_*.png
+__pycache__/
+*.pyc
+.chrome-cdp*/
