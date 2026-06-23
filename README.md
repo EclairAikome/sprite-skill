@@ -51,19 +51,28 @@ See `SKILL.md` for the full workflow and `references/` for the method and the ru
 ## Validation
 
 The skill ships with an eval suite (`evals/evals.json`) that stress-tests the hard rules on
-realistic prompts. In the iteration-1 benchmark (3 representative job briefs, 10 objective
-assertions each, 30 total -- 2-page cover-letter-first PDF, one-page resume, education above
-experience, Software as its own section, exactly 3 bullets per role, money/time quantification,
-ATS-clean ASCII, and no fabricated facts), the skill scored:
+realistic prompts. It covers three jobs (DM growth, PM internal-tools, and an analyst request that
+is deliberately *resume-only* -- which verifies the cover-letter-first default still honors an
+explicit opt-out), 10 objective assertions each (30 total): a 2-page cover-letter-first PDF, a
+one-page resume, education above experience, Software as its own section, exactly 3 bullets per
+role, money/time quantification, ATS-clean ASCII, and no fabricated facts.
+
+Re-run against the current version (**v1.1.0**):
 
 | Configuration | Assertions passed | Pass rate |
 |---------------|-------------------|-----------|
-| With skill    | 29 / 30           | **97%**   |
-| No skill (same prompts) | 23 / 30 | 77%       |
+| With skill    | 30 / 30           | **100%**  |
+| No skill (same prompts) | 22 / 30 | 73%       |
 
-It has since been exercised across hundreds of real job descriptions in batch, with every
+The no-skill baseline reliably misses the structural rules the skill enforces -- education above
+experience, a dedicated Software section, and ATS-clean ASCII are the consistent failures. An
+earlier run on the initial release (v1.0.0) scored 97% with-skill vs 77% baseline. Two of the ten
+assertions (bullet-count, no-fabrication) are graded heuristically; the other eight are exact.
+Re-run the suite yourself with the `skill-creator` eval workflow against `evals/evals.json`.
+
+The skill has also been exercised across hundreds of real job descriptions in batch, with every
 deliverable programmatically verified for the one-page rule, the 2-page structure, and ATS-clean
-ASCII. Re-run the suite yourself with the `skill-creator` eval workflow against `evals/evals.json`.
+ASCII.
 
 ## License
 

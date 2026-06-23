@@ -14,6 +14,10 @@ This project follows [Semantic Versioning](https://semver.org/).
 ### Added
 - Version metadata (`version:` in SKILL.md frontmatter), this changelog, and a Validation section
   in the README documenting the eval benchmark.
+- Re-ran the eval suite against this version: 30/30 (100%) with skill vs 22/30 (73%) no-skill
+  baseline. The resume-only eval confirms the cover-letter-first default still honors an explicit
+  opt-out. PII-safe: the with-skill runs used isolated skill copies with the fictional Jane Doe
+  candidate, so no real data entered the eval.
 
 ## [1.0.0] - 2026-06-22
 
