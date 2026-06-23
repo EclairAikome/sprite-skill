@@ -1,5 +1,7 @@
 # sprite-skill
 
+**Version 1.1.0** &middot; MIT licensed &middot; see [CHANGELOG.md](CHANGELOG.md) for release history.
+
 A Claude skill for tailoring a **one-page, ATS-clean resume** to a specific job description and
 pairing it with a **humanized, company-specific cover letter**, exported as a single 2-page PDF
 (cover letter on page 1, resume on page 2, under 2 MB).
@@ -45,6 +47,23 @@ See `SKILL.md` for the full workflow and `references/` for the method and the ru
 - Python 3.9+, `python-docx`, `PyMuPDF`
 - A PDF exporter: Microsoft Word (Windows, via `pywin32`) **or** LibreOffice (`soffice` on PATH)
 - The `humanizer` skill (companion) for de-AI-ing cover letters
+
+## Validation
+
+The skill ships with an eval suite (`evals/evals.json`) that stress-tests the hard rules on
+realistic prompts. In the iteration-1 benchmark (3 representative job briefs, 10 objective
+assertions each, 30 total -- 2-page cover-letter-first PDF, one-page resume, education above
+experience, Software as its own section, exactly 3 bullets per role, money/time quantification,
+ATS-clean ASCII, and no fabricated facts), the skill scored:
+
+| Configuration | Assertions passed | Pass rate |
+|---------------|-------------------|-----------|
+| With skill    | 29 / 30           | **97%**   |
+| No skill (same prompts) | 23 / 30 | 77%       |
+
+It has since been exercised across hundreds of real job descriptions in batch, with every
+deliverable programmatically verified for the one-page rule, the 2-page structure, and ATS-clean
+ASCII. Re-run the suite yourself with the `skill-creator` eval workflow against `evals/evals.json`.
 
 ## License
 

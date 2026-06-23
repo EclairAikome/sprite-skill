@@ -1,5 +1,6 @@
 ---
 name: sprite-skill
+version: 1.1.0
 description: >-
   Tailor a one-page, ATS-clean resume to a specific job description and pair it with a humanized,
   company-specific cover letter, exported as a single 2-page PDF (cover letter on page 1, resume on
