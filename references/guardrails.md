@@ -67,13 +67,22 @@ people (e.g. backend engineering, research), the less soft skills matter -- it i
 Volunteer + Additional (`assemble.py --drop-soft`) and spend that space on deeper technical
 experience. Read the JD and decide.
 
-## 9. The deliverable leads with a cover letter
+## 9. The deliverable leads with a cover letter (this is the DEFAULT, not an upsell)
 Every deliverable PDF is two pages: page 1 a cover letter tailored to the company and role,
 page 2 the one-page resume. The letter is sincere, shows concrete fit, and shows real enthusiasm
 for THIS company. Draft it, then run it through the `humanizer` skill to strip AI tells (em
 dashes, rule-of-three, inflated vocabulary). Keep `[Company]`/`[Role]` placeholders in the
 template; fill them per application. Final PDF must be <= 2 MB (`assemble.py` compresses if needed).
 *Why:* a generic letter reads as spam; a specific one signals you actually want this job.
+
+**Do not drop the cover letter on your own.** The two-page, cover-letter-first PDF is the
+standard deliverable for every job, including large batches. `--no-letter` / `--resume-only`
+is an EXCEPTION you take only when the user explicitly asks for a bare resume, or a specific ATS
+demands one. "It is a batch of hundreds" and "resume-only is faster / matches what we shipped
+before" are NOT reasons to skip it. When tailoring many jobs, generate a per-job letter for each
+(the company, the role, and the role's stated focus go in the opening; the body is the real
+achievements). If you believe resume-only is warranted, ask the user first rather than deciding
+it silently -- shipping a batch without letters when the user expected them is a real failure.
 
 ## 10. Honest credit + no confidential detail
 If a metric belongs to a team or a campaign, attribute it that way ("Contributed to ...",

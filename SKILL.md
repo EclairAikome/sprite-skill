@@ -42,8 +42,10 @@ Per job description, follow `references/playbook.md`. The short version:
    achievement the JD cares most about. The variant's default `bullets` are only a starting point.
 4. Decide soft-skill weighting (people-facing role -> keep Volunteer/Additional; low-touch role ->
    `--drop-soft`).
-5. Tailor the cover letter, then **run the `humanizer` skill on it** to strip AI tells.
-6. Build, verify one page, assemble the 2-page PDF, compress to <= 2 MB.
+5. Tailor the cover letter, then **run the `humanizer` skill on it** to strip AI tells. The cover
+   letter ships on EVERY job (including big batches) -- do not drop it to save effort; resume-only
+   is an explicit user opt-in, never your own default (guardrail 9).
+6. Build, verify one page, assemble the 2-page PDF (cover letter p1 + resume p2), compress to <= 2 MB.
 7. Look at the result with `preview.py` before declaring done.
 
 > **The cardinal mistake: identical work experience across jobs.** Work experience is the section
