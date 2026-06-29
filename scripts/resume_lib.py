@@ -211,13 +211,16 @@ def render_cover_letter(cand, md_path, out, line_spacing=1.12):
     (used for the sign-off).
     """
     import re
+    import datetime
     text = open(md_path, encoding="utf-8").read().strip()
     blocks = [b.strip() for b in re.split(r"\n\s*\n", text) if b.strip()]
     doc = Document(); base_style(doc, line_spacing=line_spacing)
     set_margins(doc, top=0.7, bottom=0.7, left=0.9, right=0.9)
     header(doc, cand.IDENTITY)
+    today = datetime.date.today()
+    date_str = "%d %s %d" % (today.day, today.strftime("%B"), today.year)
     pd = doc.add_paragraph(); pd.paragraph_format.space_before = Pt(6); pd.paragraph_format.space_after = Pt(8)
-    _run(pd, "[Date]", size=10.5, color=GREY)
+    _run(pd, date_str, size=10.5, color=GREY)
     for blk in blocks:
         p = doc.add_paragraph(); p.paragraph_format.space_after = Pt(9); p.paragraph_format.space_before = Pt(0)
         for j, ln in enumerate(blk.split("\n")):
