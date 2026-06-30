@@ -3,6 +3,7 @@ candidate.py
 cover_letter_DM.md
 cover_letter_PM.md
 cover_letter_*.md
+letters/
 !assets/cover_letter_*.example.md
 
 # Build artifacts

@@ -55,6 +55,29 @@ Per job description, follow `references/playbook.md`. The short version:
 > exists precisely so the experience section changes per JD. When generating for **many** jobs,
 > tailor each one's bullets individually; never let one bullet set get stamped across an archetype.
 
+## Large batches: process in verified batches of 15 (never archetype-stamp)
+
+When a job list has many roles, the lazy path is to bucket them into a few archetypes and reuse one
+resume per bucket. That is the cardinal mistake above, at scale: it produces resumes that only look
+tailored. **Forbidden.** Run the batch as a disciplined assembly line instead:
+
+1. **Read the FULL JD + key requirements for every role** -- not the title, not a snippet. If a source
+   cell is garbled or mismatched (e.g. a scraper put company B's JD under company A), flag it and work
+   from the real role; never tailor from a wrong JD and never silently pretend it was right.
+2. **Process strictly in order, 15 at a time** (rows 1-15, then 16-30, ...). One batch at a time.
+3. **Tailor every role individually from its own JD:** a per-JD summary, 6-8 competencies in the JD's
+   own words, software (verified tools only), and a per-JD 3-per-role bullet selection whose lead is
+   reframed in that JD's vocabulary (true facts only). Reselect/reorder so two roles never carry an
+   identical experience section by default. Plus a per-JD cover letter whose opening ties to that JD's
+   actual stated focus.
+4. **Gate each batch with adversarial verification before moving on.** Run `scripts/verify.py` on every
+   PDF in the batch; it checks the hard rules (2-page letter+resume, one-page resume, section order,
+   3-per-role / 2-volunteer bullet counts, 6-8 competencies, verified-tools-only software, ASCII-clean
+   with no em/en dashes or curly quotes, no leftover placeholders/example text, correct date, company
+   present, <= 2 MB). Also eyeball a sample with `preview.py`. Only when the entire batch passes do you
+   start the next one.
+5. A batch that fails verification is fixed and re-verified before you proceed -- never carried forward.
+
 Always read `references/guardrails.md` before editing content -- the hard rules (never fabricate,
 one page, ATS-clean, structure order, 3-bullets-per-role / 2-for-volunteer, results-first,
 honest credit) are what make the output trustworthy and effective. `references/action_verbs.md`
